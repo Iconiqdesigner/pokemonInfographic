@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Pokemon Infographic</title>
+<!-- LOAD GOOGLE FONTS -->
+<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:400,400i,700,700i" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+  <ul id="waypoint-nav">
+    <li><a href="#pokemon-legacy" id="legacy-waypoint">Legacy</a></li>
+    <li><a href="#pokemon-world" id="world-waypoint">World</a></li>
+    <li><a href="#pokemon-types" id="type-waypoint">Types</a></li>
+    <li><a href="#pokemon-evolution" id="evolution-waypoint">Evolution</a></li>
+  </ul>
+  <div id="wrapper">
+
+    <header>
+      <img src="i/logo_pokemon.svg" alt="Pokemon Gotta Catch 'Em All!'" class="main-logo"/>
+      <img src="i/img_bulbasaur.png" alt="Bulbasaur" id="bulbasaur" class="hidden-pokemon" />
+      <img src="i/img_charmander.png" alt="Charmander" id="charmander" class="hidden-pokemon" />
+      <img src="i/img_pikachu.png" alt="Pikachu" id="pikachu" class="hidden-pokemon" />
+      <img src="i/img_squirtle.png" alt="Squirtle" id="squirtle" class="hidden-pokemon" />
+    </header>
+
+    <main>
+      <section id="pokemon-legacy" class="info-section" data-waypoint="legacy">
+        <header>
+          <h1>The Legacy</h1>
+          <p>Pokémon was created by Satoshi Tajiri in 1995, (21 years ago) and and is
+          centered on fictional creatures called "Pokémon", which humans, known as
+          Pokémon Trainers, catch and train to battle each other for sport. Originally
+          there were 151 Pokémon. Since then five more "generations" of Pokémon have been released.</p>
+        </header>
+        <h2>New Pokémon Per Generation</h2>
+        <div class="responsive-chart-container gen-chart-container">
+          <div id="gen-chart"></div>
+        </div>
+        <h2>Explore the Generations</h2>
+        <p>Select a Generation to see the Pokémon from that era.</p>
+        <form id="generation-form" class="radio-select">
+          <label for="rdo-gen-i"><input type="radio" id="rdo-gen-i" name="rdo-generation" value="1" />Generation I</label>
+          <label for="rdo-gen-ii"><input type="radio" id="rdo-gen-ii" name="rdo-generation" value="2" />Generation II</label>
+          <label for="rdo-gen-iii"><input type="radio" id="rdo-gen-iii" name="rdo-generation" value="3" />Generation III</label>
+          <label for="rdo-gen-iv"><input type="radio" id="rdo-gen-iv" name="rdo-generation" value="4" />Generation IV</label>
+          <label for="rdo-gen-v"><input type="radio" id="rdo-gen-v" name="rdo-generation" value="5" />Generation V</label>
+          <label for="rdo-gen-vi"><input type="radio" id="rdo-gen-vi" name="rdo-generation" value="6" />Generation VI</label>
+        </form>
+        <ul id="pokemon-generation-list">
+        </ul>
+      </section>
+
+      <section id="pokemon-world" class="info-section" data-waypoint="world">
+        <header>
+          <h1>The World</h1>
+          <p>Each generation of Pokemon introduced a new region of the world to its audience, with new pokemon and new locations to explore.</p>
+        </header>
+        <div id="world-map-wrapper">
+          <ul id="map-list">
+            <li id="kanto" data-region="region/1">Kanto</li>
+            <li id="johto" data-region="region/2">Johto</li>
+            <li id="hoenn" data-region="region/3">Hoenn</li>
+            <li id="sinnoh" data-region="region/4">Sinnoh</li>
+            <li id="unova" data-region="region/5">Unova</li>
+            <li id="kalos" data-region="region/6">Kalos</li>
+          </ul>
+          <div id="region-data">
+            <a href="#" class="close-region">&lsaquo; Return to the World Map</a>
+            <h2 id="region-name"></h2>
+            <div class="two-col left">
+              <h3>Main Generation:</h3>
+              <p id="region-generation"></p>
+              <h3>In Versions:</h3>
+              <ul class="region-list version-list">
+              </ul>
+            </div>
+            <div id="region-right" class="two-col right">
+              <h3>Locations:</h3>
+              <ul class="region-list location-list">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="pokemon-types" class="info-section" data-waypoint="type">
+        <header>
+          <h1>Pokémon Types</h1>
+          <p>Every Pokémon in existance has one or more "types." These types are named for natural elements, energies, physical attributes, or species, and </p>
+        </header>
+        <ul class="type-list vert-list col-sidebar">
+          <li class="type-bug"><a href="#" data-type="bug" data-color="#3c9950">Bug</a></li>
+          <li class="type-dark"><a href="#" data-type="dark" data-color="#595978">Dark</a></li>
+          <li class="type-dragon"><a href="#" data-type="dragon" data-color="#e91368">Dragon</a></li>
+          <li class="type-electric"><a href="#" data-type="electric" data-color="#e2e32b">Electric</a></li>
+          <li class="type-fairy"><a href="#"  data-type="fairy" data-color="#62cad9">Fairy</a></li>
+          <li class="type-fighting"><a href="#" data-type="fighting" data-color="#ef6239">Fighting</a></li>
+          <li class="type-fire"><a href="#" data-type="fire" data-color="#fd4b5a">Fire</a></li>
+          <li class="type-flying"><a href="#" data-type="flying" data-color="#94b2c7">Flying</a></li>
+          <li class="type-ghost"><a href="#"  data-type="ghost" data-color="#906791">Ghost</a></li>
+          <li class="type-grass"><a href="#" data-type="grass" data-color="#27cb50">Grass</a></li>
+          <li class="type-ground"><a href="#" data-type="ground" data-color="#a8702d">Ground</a></li>
+          <li class="type-ice"><a href="#" data-type="ice" data-color="#85cff1">Ice</a></li>
+          <li class="type-normal"><a href="#" data-type="normal" data-color="#ca99a6">Normal</a></li>
+          <li class="type-poison"><a href="#" data-type="poison" data-color="#9b69da">Poison</a></li>
+          <li class="type-psychic"><a href="#" data-type="psychic" data-color="#f71e92">Psychic</a></li>
+          <li class="type-rock"><a href="#" data-type="rock" data-color="#8b3e22">Rock</a></li>
+          <li class="type-steel"><a href="#" data-type="steel" data-color="#60756e">Steel</a></li>
+          <li class="type-water"><a href="#"  data-type="water" data-color="#1552e1">Water</a></li>
+        </ul>
+        <div class="responsive-chart-container">
+          <div id="type-chart" class="am-chart"></div>
+        </div>
+
+      </section>
+
+      <section id="pokemon-evolution" class="info-section" data-waypoint="evolution">
+        <header>
+          <h1>Evolution</h1>
+          <p>Another key features of the Pokémon universe is that as pokemon
+            increase in power they evolve into stronger versions of themselves.
+            This is true of almost every single Pokémon. Explore Pokémon evolution
+            by typing a Pokemon name or number into the search box below.</p>
+        </header>
+        <form id="find-pokemon" class="single-field-form clearfix">
+          <input type="text" id="s" value="" placeholder="Search by name or number" />
+          <input type="submit" value="Find It" />
+        </form>
+        <div id="single-pokemon">
+          <h2 id="single-pokemon-name"></h2>
+          <div id="stat-container"></div>
+          <div id="stat-chart"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+    </footer>
+  </div>
+
+
+<!-- LOAD CUSTOM JS -->
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+  <script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/radar.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>

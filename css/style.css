@@ -1,0 +1,442 @@
+* {box-sizing: border-box;}
+html { font: 62.5%; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #f5c40c;
+  font-family: 'Alegreya Sans', 'Gotham', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+#wrapper {
+  padding: 5rem 0;
+  max-width: 90rem;
+  width: 75%;
+  background: #f7f3c3;
+  margin: auto;
+  border-left: 1.5rem solid white;
+  border-right: 1.5rem solid white;
+}
+
+header {
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+.main-logo {
+  display: block;
+  max-width: 80%;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hidden-pokemon {
+  position: absolute;
+  width: 11%;
+  z-index: 1;
+  transition: top 1s, left 1s;
+}
+
+#bulbasaur.hidden-pokemon {
+  top: 22%;
+  left: 15%;
+}
+#bulbasaur.hidden-pokemon.show-pokemon {
+  top: -5%;
+}
+#charmander.hidden-pokemon {
+  top: 17%;
+  left: 37%;
+}
+#charmander.hidden-pokemon.show-pokemon {
+  top: -3%;
+}
+#pikachu.hidden-pokemon {
+  top: 14%;
+  left: 60%;
+}
+#pikachu.hidden-pokemon.show-pokemon {
+  top: -5%;
+}
+#squirtle.hidden-pokemon {
+  top: 26%;
+  left: 76%;
+}
+#squirtle.hidden-pokemon.show-pokemon {
+  top: 1%;
+}
+
+main {
+  padding-bottom: 5rem;
+}
+
+section {
+  position: relative;
+  min-height: 30rem;
+  width: 95%;
+  margin: 1.5rem auto;
+  padding: 1.5rem 0;
+  border-top: .1rem dashed #ffcb05;
+}
+
+section header {
+  padding-bottom: .5rem;
+}
+
+section::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+section:last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-family: 'Bangers', sans-serif;
+  font-size: 4.8rem;
+  color: #004a94;
+  text-align: center;
+  text-shadow: .2rem .2rem 0 white;
+  letter-spacing: .5rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 2.4rem;
+  color: #1297b1;
+  margin-bottom: 0;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #528CCB;
+  margin-bottom: 0;
+}
+
+p, li { font-size: 1.4rem; }
+
+p { color: #6A6663; }
+
+img {
+  border: 0;
+  max-width: 100%;
+}
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.type-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.type-list li {
+  display: inline-block;
+  margin: 0 1rem 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.type-list li.inactive {
+  opacity: .3;
+}
+.type-list li.inactive:hover {
+  opacity: 1;
+}
+
+.responsive-chart-container {
+  position: relative;
+  width: 100%;
+}
+.responsive-chart-container.type-chart-container::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+.responsive-chart-container.gen-chart-container::after {
+  content: "";
+  display: block;
+  padding-bottom: 2%;
+}
+.am-chart {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.type-list li a {
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  text-indent: -999rem;
+  background: url("../i/typ_bug.png") center/cover no-repeat;
+}
+.type-list li.type-bug a { background: url("../i/typ_bug.png") center/cover no-repeat; }
+.type-list li.type-dark a { background: url("../i/typ_dark.png") center/cover no-repeat; }
+.type-list li.type-dragon a { background: url("../i/typ_dragon.png") center/cover no-repeat; }
+.type-list li.type-electric a { background: url("../i/typ_electric.png") center/cover no-repeat; }
+.type-list li.type-fairy a { background: url("../i/typ_fairy.png") center/cover no-repeat; }
+.type-list li.type-fighting a { background: url("../i/typ_fighting.png") center/cover no-repeat; }
+.type-list li.type-fire a { background: url("../i/typ_fire.png") center/cover no-repeat; }
+.type-list li.type-flying a { background: url("../i/typ_flying.png") center/cover no-repeat; }
+.type-list li.type-ghost a { background: url("../i/typ_ghost.png") center/cover no-repeat; }
+.type-list li.type-grass a { background: url("../i/typ_grass.png") center/cover no-repeat; }
+.type-list li.type-ground a { background: url("../i/typ_ground.png") center/cover no-repeat; }
+.type-list li.type-ice a { background: url("../i/typ_ice.png") center/cover no-repeat; }
+.type-list li.type-normal a { background: url("../i/typ_normal.png") center/cover no-repeat;}
+.type-list li.type-poison a { background: url("../i/typ_poison.png") center/cover no-repeat; }
+.type-list li.type-psychic a { background: url("../i/typ_psychic.png") center/cover no-repeat; }
+.type-list li.type-rock a { background: url("../i/typ_rock.png") center/cover no-repeat; }
+.type-list li.type-steel a { background: url("../i/typ_steel.png") center/cover no-repeat; }
+.type-list li.type-water a { background: url("../i/typ_water.png") center/cover no-repeat; }
+
+#type-chart {
+  width: 100%;
+  height: 100%;
+}
+
+#gen-chart {
+  width: 100%;
+  height: 20rem;
+}
+
+.two-col {
+  width: 50%;
+}
+
+.left { float: left; }
+.right { float: right; }
+
+#waypoint-nav {
+  position: fixed;
+  left: 0;
+  top: 6.5rem;
+  padding: 0;
+  margin: 0;
+}
+
+#waypoint-nav li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#waypoint-nav li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  line-height: 1.6rem;
+  font-size: 1.2rem;
+  padding: 0 .5rem;
+  margin: .5rem 0 .5rem 1rem;
+  border-left: .2rem solid transparent;
+}
+
+#waypoint-nav li a.on-screen {
+  color: #004a94;
+  border-color: #004a94;
+
+}
+
+
+#pokemon-generation-list { margin: 0; padding: 0; text-align: center;}
+#pokemon-generation-list::after { content: ""; display: block; height: 0; clear: both; }
+.loading {
+  height:30rem;
+  background: transparent url("../i/ring-alt.gif") center no-repeat;
+}
+
+#pokemon-generation-list li {
+  list-style: none;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 1rem .6rem 0;
+  display: inline-flex;
+  vertical-align: initial;
+  overflow: hidden;
+  background: white;
+  border-radius: 50%;
+}
+
+#world-map-wrapper {
+  position: relative;
+  width: 100%;
+  background: url("../i/worldMap.png") center no-repeat;
+  background-size: contain;
+  overflow: hidden;
+}
+
+#world-map-wrapper::after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+#map-list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#map-list li {
+  list-style: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 2.1rem;
+  font-weight: bold;
+  text-shadow: .15rem .15rem 0 #094b58;
+  cursor: pointer;
+  transition: all .5s;
+}
+li#kanto { left: 51%; top: 44%; }
+li#johto { left: 26%; top: 30%; }
+li#hoenn { left: 38%; top: 59%; }
+li#sinnoh { left: 30%; top: 87%; }
+li#unova { left: 82%; top: 58%; }
+li#kalos { left: 27%; top: 15%; }
+
+@media screen and (max-width: 998px) {
+  #map-list li {
+    font-size: 1.6rem;
+  }
+}
+
+#region-data {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  top: 100%;
+  color: white;
+  transition: all .8s ease-out;
+}
+
+#region-data.visible {
+  top: 0;
+}
+
+#region-data h2, #region-data h3, #region-data h4 {
+  color: #1297b1;
+}
+
+#region-data h3, #region-data h4 {
+  margin-bottom: 0;
+}
+
+#region-data p {
+  margin-top: 0;
+  color: white;
+}
+
+#region-right {
+  height: 88%;
+}
+
+.region-list.location-list {
+  height: 80%;
+  overflow: scroll;
+}
+
+.close-region {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: .6;
+}
+
+.close-region:hover {
+  opacity: 1;
+  color: #f5c40c;
+}
+
+#stat-chart {
+  width: 100%;
+  height: 40rem;
+}
+/* SINGLE LINE FORM */
+form.single-field-form {
+  margin: 0;
+  padding: 0;
+  min-width: 90%;
+  height: 3.2rem;
+  position: relative;
+}
+
+form.single-field-form input {
+  height: 3.2rem;
+  line-height: 3.2rem;
+  font-size: 1.6rem;
+  border: .2rem solid transparent;
+}
+
+form.single-field-form input[type="text"] {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+ }
+
+form.single-field-form input[type="submit"] {
+ width: auto;
+ position: absolute;
+ right: 0;
+ top: 0;
+}
+
+
+/* RADIO SELECT FORM */
+form.radio-select {
+  text-align: center;
+}
+
+form.radio-select input[type="radio"] {
+  display: none;
+}
+
+form.radio-select label {
+  display: inline-block;
+  padding: 5px 20px;
+  text-align: center;
+  min-width: 15rem;
+  max-width: 100%;
+  margin: 0 .5rem 1rem 0;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+  background: #27a8c2;
+  border-radius: .3rem;
+  top: 0;
+  color: white;
+  font-size: 1.8rem;
+  border: .1rem solid #1297b1;
+  box-shadow: 0 .2rem 0 #1297b1;
+  transition: top .1s, box-shadow .1s;
+}
+form.radio-select label.selected {
+  box-shadow: inset 0 0 .1rem #000;
+  top: .2rem;
+  border:0;
+  background: #066477;
+}
