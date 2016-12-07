@@ -377,6 +377,64 @@ li#kalos { left: 27%; top: 15%; }
   vertical-align: middle;
 }
 
+#evolution-chain {
+  margin: 2rem 0 1rem 0;
+  padding: 0;
+  display: flex;
+
+}
+
+#evolution-chain li {
+  list-style: none;
+  flex-grow: 1;
+  text-align: center;
+  color: white;
+  line-height: 2.4rem;
+  background: #27a8c2;
+  cursor: pointer;
+  margin-right: 0;
+  position: relative;
+  z-index: 2
+}
+
+#evolution-chain li:hover {
+  background: #1eb6d5;
+}
+
+
+#evolution-chain li::after, #evolution-chain li::before {
+  content: '';
+  border: 1.2rem solid #f7f3c3;
+  border-left-color: #27a8c2;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#evolution-chain li:hover::after {
+  border-left-color: #1eb6d5;
+}
+
+#evolution-chain li::before {
+  right: auto;
+  left: 0;
+  border: 1.2rem solid #27a8c2;
+  border-left-color: #f7f3c3;
+}
+
+#evolution-chain li:hover::before {
+  border-right-color: #1eb6d5;
+  border-top-color: #1eb6d5;
+  border-bottom-color: #1eb6d5;
+}
+
+#evolution-chain li:first-child::before {
+  content: none;
+}
+
 /* SINGLE LINE FORM */
 form.single-field-form {
   margin: 0;
