@@ -150,12 +150,9 @@ img {
   list-style: none;
 }
 
-.type-list li.inactive {
-  opacity: .3;
-}
-.type-list li.inactive:hover {
-  opacity: 1;
-}
+.type-list li.inactive { opacity: .3; }
+
+.type-list li.inactive:hover { opacity: 1; }
 
 .responsive-chart-container {
   position: relative;
@@ -373,8 +370,13 @@ li#kalos { left: 27%; top: 15%; }
 
 #stat-chart {
   width: 100%;
-  height: 40rem;
+  height: 30rem;
 }
+
+#single-pokemon-name img {
+  vertical-align: middle;
+}
+
 /* SINGLE LINE FORM */
 form.single-field-form {
   margin: 0;
@@ -386,23 +388,38 @@ form.single-field-form {
 
 form.single-field-form input {
   height: 3.2rem;
-  line-height: 3.2rem;
+  line-height: 2.2rem;
   font-size: 1.6rem;
   border: .2rem solid transparent;
+  padding: 0 1rem;
+  position: absolute;
+  top: 0;
 }
 
 form.single-field-form input[type="text"] {
   width: 100%;
-  position: absolute;
   left: 0;
-  top: 0;
+  padding-right: 8rem;
  }
 
 form.single-field-form input[type="submit"] {
  width: auto;
- position: absolute;
  right: 0;
- top: 0;
+ display: inline-block;
+ text-align: center;
+ vertical-align: middle;
+ cursor: pointer;
+ background: #27a8c2;
+ border-radius: 0;
+ color: white;
+}
+
+form.single-field-form input[type="submit"]:hover {
+  background: #1eb6d5;
+}
+
+form.single-field-form input[type="submit"]:active {
+  background: #12849b;
 }
 
 

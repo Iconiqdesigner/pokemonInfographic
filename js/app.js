@@ -404,6 +404,9 @@ var POKEMONAPP = {
     $("#find-pokemon").on('submit', function(e){
       e.preventDefault();
       $searchVal = $("#s").val().toLowerCase();
+      //CLEAR OUT THE STAT CONTAINER
+      $("#stat-container, #single-pokemon-name, #ability-list, #evolution-chain").html('');
+      $("#single-pokemon").addClass("loading");
       $("#s").val('');
       POKEMONAPP.searchPokemon($searchVal, POKEMONAPP.searchCallback)
 
@@ -411,42 +414,67 @@ var POKEMONAPP = {
   },
 
   searchCallback: function(response) {
-    evolutionChain = response.species.url || undefined;
-    console.log(evolutionChain);
+    pokemon = response.species.url || undefined;
+    POKEMONAPP.evolutionCall(pokemon);
 
-
-    //CLEAR OUT THE STAT CONTAINER
-    $("#stat-container").html('');
     var pokeObj = response;
     var stats = response.stats;
     var abilities = response.abilities;
+    var pokeName = POKEMONAPP.uppercase(pokeObj.name)
 
+    $("#single-pokemon").removeClass("loading");
     $pokeSprite = $('<img class="sprite-image" src="' + pokeObj.sprites.front_default + '" alt="' + pokeObj.name + '" />')
-    $baseStatsList = $('<ul class="stat-list"></ul>');
-    $abilitiesList = $('<ul class="ability-list"></ul>');
+    $abilitiesList = $('<ul id="ability-list"></ul>');
 
-    $("#stat-container").append($pokeSprite);
-    $("#single-pokemon-name").append(pokeObj.name);
+    $("#single-pokemon-name").append($pokeSprite);
+    $("#single-pokemon-name").append(pokeName);
 
     POKEMONAPP.getPokemonStats(stats);
-    $("#stat-container").append($baseStatsList);
-
-    POKEMONAPP.getPokemonAbilities(abilities);
-    $("#stat-container").append($abilitiesList);
-
     POKEMONAPP.printStatsGraph();
 
+    POKEMONAPP.getPokemonAbilities(abilities);
+    $("#stat-container").append("<h3>" + pokeName + "'s abilities are.</h3>");
+    $("#stat-container").append($abilitiesList);
 
   },
 
-  evolutionCall: function(evolutionChain) {
+  evolutionCall: function(pokemon) {
+    if (pokemon !== undefined) {
+      $.get({
+        url: pokemon,
+        success: POKEMONAPP.getEvolutionChain
+      });
+    }
+  },
+
+  getEvolutionChain: function(response) {
+    evolutionChain = response.evolution_chain.url;
     $.get({
       url: evolutionChain,
-      // success:
-    });
+      success: POKEMONAPP.evolutionChainCall
+    })
   },
 
-  evolutionChainCallback: function() {}
+  evolutionChainCall: function(response) {
+    $("#evolution-chain").html('');
+    console.log(response);
+    chain = response.chain;
+    is_baby = chain.is_baby;
+    evolves_to = chain.evolves_to;
+    $("#evolution-chain").append('<li data-name="' + chain.species.name + '">' + POKEMONAPP.uppercase(chain.species.name) + '</li>');
+
+    evolves_to.forEach(POKEMONAPP.printEvolutionChain);
+  },
+
+  printEvolutionChain: function(evolution) {
+    $li = $("<li></li>");
+    $li.attr("data-name", evolution.species.name);
+    $li.text(POKEMONAPP.uppercase(evolution.species.name));
+    $("#evolution-chain").append($li);
+    if(evolution.evolves_to.length > 0) {
+      evolution.evolves_to.forEach(POKEMONAPP.printEvolutionChain)
+    }
+  },
 
   getPokemonStats: function(stats) {
     POKEMONAPP.singlePokemonStats = [];
