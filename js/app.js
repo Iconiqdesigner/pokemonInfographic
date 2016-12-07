@@ -393,6 +393,8 @@ var POKEMONAPP = {
   //----------------------------------------------------------------------------
   //POKEMON EVOLUTION FUNCTIONS
   searchPokemon: function(query, callback) {
+    $("#stat-container, #single-pokemon-name, #ability-list, #evolution-chain, #stat-chart").html('');
+    $("#single-pokemon").addClass("loading");
     $.get({
       url: POKEMONAPP.pokeapi + 'pokemon/' + query,
       success: callback
@@ -405,8 +407,7 @@ var POKEMONAPP = {
       e.preventDefault();
       $searchVal = $("#s").val().toLowerCase();
       //CLEAR OUT THE STAT CONTAINER
-      $("#stat-container, #single-pokemon-name, #ability-list, #evolution-chain").html('');
-      $("#single-pokemon").addClass("loading");
+
       $("#s").val('');
       POKEMONAPP.searchPokemon($searchVal, POKEMONAPP.searchCallback)
 
@@ -461,8 +462,11 @@ var POKEMONAPP = {
     chain = response.chain;
     is_baby = chain.is_baby;
     evolves_to = chain.evolves_to;
-    $("#evolution-chain").append('<li data-name="' + chain.species.name + '">' + POKEMONAPP.uppercase(chain.species.name) + '</li>');
-
+    if(is_baby === true) {
+      $("#evolution-chain").append('<li class="baby-form" data-name="' + chain.species.name + '">' + POKEMONAPP.uppercase(chain.species.name) + '</li>');
+    } else {
+      $("#evolution-chain").append('<li data-name="' + chain.species.name + '">' + POKEMONAPP.uppercase(chain.species.name) + '</li>');
+    }
     evolves_to.forEach(POKEMONAPP.printEvolutionChain);
   },
 
@@ -486,6 +490,11 @@ var POKEMONAPP = {
     });
   },
 
+  clickEvolutionChain: $("#evolution-chain").on('click', "li", function(){
+    $searchTerm = $(this).data("name");
+    POKEMONAPP.searchPokemon($searchTerm, POKEMONAPP.searchCallback);
+  }),
+
   getPokemonAbilities: function(abilities) {
     abilities.forEach( function(ability) {
       $li = $('<li class="pokemon-abilities"></li>');
@@ -502,6 +511,7 @@ POKEMONAPP.smoothScroll;
 POKEMONAPP.markWaypoint;
 POKEMONAPP.clickLocation;
 POKEMONAPP.closeRegionData;
+POKEMONAPP.clickEvolutionChain;
 POKEMONAPP.printGenerationGraph();
 POKEMONAPP.getGenerationNum();
 POKEMONAPP.selectSinglePokemon();
