@@ -170,6 +170,7 @@ var POKEMONAPP = {
 
   selectSinglePokemon: function() {
     $("#pokemon-generation-list").on('click', 'li', function() {
+      $pokeId = $(this).data("number")
       $(this).siblings().removeClass('selected');
       $(this).toggleClass('selected');
     })
@@ -195,10 +196,10 @@ var POKEMONAPP = {
   // PUT EACH POKEMON SPRITE AND NAME INTO AN LI AND ADD IT TO THE POKEMON
   // GENERATION LISTS
   addPokemonToLi: function(obj) {
-    $li = $('<li class="pokemon-generation-li" data-number="pokemon/' + POKEMONAPP.getNumber(obj.url) + '"></li>');
+    $li = $('<li class="pokemon-generation-li" data-number="' + POKEMONAPP.getNumber(obj.url) + '"></li>');
     $img = $('<img src="' + POKEMONAPP.front_default + POKEMONAPP.getNumber(obj.url) + '.png" alt="" ' +
             'class="pokemon-sprite" />');
-    $name = $('<span class="pokemon-name">' + obj.name + '</span>')
+    $name = $('<span class="pokemon-name">' + POKEMONAPP.uppercase(obj.name) + '</span>')
     $li.append($img);
     $li.append($name);
     $("#pokemon-generation-list").append($li);

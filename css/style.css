@@ -249,7 +249,7 @@ img {
 }
 
 
-#pokemon-generation-list { margin: 0; padding: 0; text-align: center;}
+#pokemon-generation-list { margin: 0; padding: 0; text-align: center; position: relative;}
 #pokemon-generation-list::after { content: ""; display: block; height: 0; clear: both; }
 .loading {
   height:30rem;
@@ -261,12 +261,59 @@ img {
   width: 5rem;
   height: 5rem;
   margin: 0 1rem .6rem 0;
-  display: inline-flex;
+  display: inline-block;
   vertical-align: initial;
+  text-align: center;
   overflow: hidden;
   background: white;
   border-radius: 50%;
+  position: relative;
+  left: 0;
+  top: 0;
+  background: #f0f6f7;
+  border: .1rem solid #27a8c2;
+  transition: all .5s ease-out;
 }
+
+.pokemon-generation-li::after {
+  content: 'Pokémon #' attr(data-number);
+  display: block;
+  font-style: italic;
+  color: #a9aaa6;
+  font-size: 1.2rem;
+}
+
+#pokemon-generation-list li.selected {
+  z-index: 5;
+  width: 15rem;
+  height: 15rem;
+  top: 4.4rem;
+  left: -.5rem;
+  background: #fff;
+  margin: -16.5rem -4.5rem 0 -4.5rem;
+  box-shadow: 0 0 1rem #066477;
+}
+
+#pokemon-generation-list li img {
+  width: 5rem;
+  height: 5rem;
+  max-width: none;
+  display: block;
+  margin: auto;
+  transition: all .5s ease-out;
+  position: relative;
+  top: 0;
+}
+
+#pokemon-generation-list li.selected img {
+  width: 9.6rem;
+  height: 9.6rem;
+}
+
+#pokemon-generation-list li .pokemon-name {
+  color: #6A6663;
+}
+
 
 #world-map-wrapper {
   position: relative;
