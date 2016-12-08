@@ -70,6 +70,13 @@ var POKEMONAPP = {
     $(".type-list li").removeClass("inactive");
   }),
 
+  clearEvolution: $("#clear-evolution").click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $("#stat-container, #single-pokemon-name, #ability-list, #evolution-chain, #stat-chart").html('');
+    $(this).removeClass("visible");
+  }),
+
   checkVisible: function ( elm, eval ) {
       eval = eval || "visible";
       var vpH = $(window).height(), // Viewport Height
@@ -458,8 +465,6 @@ var POKEMONAPP = {
     $("#find-pokemon").on('submit', function(e){
       e.preventDefault();
       $searchVal = $("#s").val().toLowerCase();
-      //CLEAR OUT THE STAT CONTAINER
-
       $("#s").val('');
       POKEMONAPP.searchPokemon($searchVal, POKEMONAPP.searchCallback)
 
@@ -478,6 +483,7 @@ var POKEMONAPP = {
     console.log(pokeObj);
 
     $("#single-pokemon").removeClass("loading");
+    $("#clear-evolution").addClass("visible");
     $pokeSprite = $('<img class="sprite-image" src="' + pokeObj.sprites.front_default + '" alt="' + pokeObj.name + '" />')
     $typeList = $('<ul id="pokemon-type-list"></ul>');
     $abilitiesList = $('<ul id="ability-list"></ul>');
@@ -581,6 +587,7 @@ POKEMONAPP.smoothScroll;
 POKEMONAPP.markWaypoint;
 POKEMONAPP.clickLocation;
 POKEMONAPP.clearGenerationList;
+POKEMONAPP.clearEvolution;
 POKEMONAPP.clearTypeChart;
 POKEMONAPP.closeRegionData;
 POKEMONAPP.clickEvolutionChain;

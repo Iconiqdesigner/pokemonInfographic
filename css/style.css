@@ -226,7 +226,7 @@ img {
   padding-bottom: 2%;
 }
 
-#hide-type-chart, #clear-generation-list {
+#hide-type-chart, #clear-generation-list, #clear-evolution {
   color: #27a8c2;
   font-weight: bold;
   text-decoration: none;
@@ -235,16 +235,15 @@ img {
   display: none;
 }
 
-#clear-generation-list {
-  margin: 1rem 0;
-}
+#clear-generation-list { margin: 1rem 0; }
+#clear-evolution { margin: 1rem 0 0 0; }
 
-#hide-type-chart:hover, #clear-generation-list:hover {
+#hide-type-chart:hover, #clear-generation-list:hover, #clear-evolution:hover {
   background: #27a8c2;
   color: #fff;
 }
 
-.responsive-chart-container.type-chart-container #hide-type-chart, #clear-generation-list.visible {
+.responsive-chart-container.type-chart-container #hide-type-chart, #clear-generation-list.visible, #clear-evolution.visible {
   display: inline-block;
 }
 
