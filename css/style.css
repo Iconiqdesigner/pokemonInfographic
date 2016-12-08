@@ -226,7 +226,7 @@ img {
   padding-bottom: 2%;
 }
 
-#hide-type-chart {
+#hide-type-chart, #clear-generation-list {
   color: #27a8c2;
   font-weight: bold;
   text-decoration: none;
@@ -235,12 +235,16 @@ img {
   display: none;
 }
 
-#hide-type-chart:hover {
+#clear-generation-list {
+  margin: 1rem 0;
+}
+
+#hide-type-chart:hover, #clear-generation-list:hover {
   background: #27a8c2;
   color: #fff;
 }
 
-.responsive-chart-container.type-chart-container #hide-type-chart {
+.responsive-chart-container.type-chart-container #hide-type-chart, #clear-generation-list.visible {
   display: inline-block;
 }
 
@@ -409,6 +413,12 @@ img {
   font-style: italic;
   color: #a9aaa6;
   font-size: 1.2rem;
+}
+
+
+
+#pokemon-generation-list li:hover {
+  background: #fff;
 }
 
 #pokemon-generation-list li.selected {

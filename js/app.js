@@ -54,6 +54,14 @@ var POKEMONAPP = {
     $showPokemon.removeClass("show-pokemon");
   }),
 
+  clearGenerationList: $("#clear-generation-list").click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $("#pokemon-generation-list").html('');
+    $("#generation-form label").removeClass("selected");
+    $(this).removeClass("visible");
+  }),
+
   clearTypeChart: $("#hide-type-chart").click(function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -201,6 +209,7 @@ var POKEMONAPP = {
       //TAG CLASS OF CURRENT GENERATION
       $(this).siblings().removeClass('selected');
       $(this).addClass('selected');
+      $("#clear-generation-list").addClass('visible');
       //CLEAR OUT THE LIST
       $("#pokemon-generation-list").html('');
       $generation = $(this).find('input').val();
@@ -571,6 +580,7 @@ POKEMONAPP.pokePop;
 POKEMONAPP.smoothScroll;
 POKEMONAPP.markWaypoint;
 POKEMONAPP.clickLocation;
+POKEMONAPP.clearGenerationList;
 POKEMONAPP.clearTypeChart;
 POKEMONAPP.closeRegionData;
 POKEMONAPP.clickEvolutionChain;
