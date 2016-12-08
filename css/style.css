@@ -177,28 +177,31 @@ img {
 .type-list li a {
   display: block;
   width: 5rem;
-  height: 5rem;
-  text-indent: -999rem;
-  background: url("../i/typ_bug.png") center/cover no-repeat;
+  padding-top: 5rem;
+  height: 7rem;
+  text-decoration: none;
+  color: #3c9950;
+  text-align: center;
+  background: url("../i/typ_bug.png") top center/contain no-repeat;
 }
-.type-list li.type-bug a { background: url("../i/typ_bug.png") center/cover no-repeat; }
-.type-list li.type-dark a { background: url("../i/typ_dark.png") center/cover no-repeat; }
-.type-list li.type-dragon a { background: url("../i/typ_dragon.png") center/cover no-repeat; }
-.type-list li.type-electric a { background: url("../i/typ_electric.png") center/cover no-repeat; }
-.type-list li.type-fairy a { background: url("../i/typ_fairy.png") center/cover no-repeat; }
-.type-list li.type-fighting a { background: url("../i/typ_fighting.png") center/cover no-repeat; }
-.type-list li.type-fire a { background: url("../i/typ_fire.png") center/cover no-repeat; }
-.type-list li.type-flying a { background: url("../i/typ_flying.png") center/cover no-repeat; }
-.type-list li.type-ghost a { background: url("../i/typ_ghost.png") center/cover no-repeat; }
-.type-list li.type-grass a { background: url("../i/typ_grass.png") center/cover no-repeat; }
-.type-list li.type-ground a { background: url("../i/typ_ground.png") center/cover no-repeat; }
-.type-list li.type-ice a { background: url("../i/typ_ice.png") center/cover no-repeat; }
-.type-list li.type-normal a { background: url("../i/typ_normal.png") center/cover no-repeat;}
-.type-list li.type-poison a { background: url("../i/typ_poison.png") center/cover no-repeat; }
-.type-list li.type-psychic a { background: url("../i/typ_psychic.png") center/cover no-repeat; }
-.type-list li.type-rock a { background: url("../i/typ_rock.png") center/cover no-repeat; }
-.type-list li.type-steel a { background: url("../i/typ_steel.png") center/cover no-repeat; }
-.type-list li.type-water a { background: url("../i/typ_water.png") center/cover no-repeat; }
+.type-list li.type-bug a { color: #3c9950; background: url("../i/typ_bug.png") top center/contain no-repeat; }
+.type-list li.type-dark a { color: #595978; background: url("../i/typ_dark.png") top center/contain no-repeat; }
+.type-list li.type-dragon a { color: #e91368; background: url("../i/typ_dragon.png") top center/contain no-repeat; }
+.type-list li.type-electric a { color: #e0cb19; background: url("../i/typ_electric.png") top center/contain no-repeat; }
+.type-list li.type-fairy a { color: #62cad9; background: url("../i/typ_fairy.png") top center/contain no-repeat; }
+.type-list li.type-fighting a { color: #ef6239; background: url("../i/typ_fighting.png") top center/contain no-repeat; }
+.type-list li.type-fire a { color: #fd4b5a; background: url("../i/typ_fire.png") top center/contain no-repeat; }
+.type-list li.type-flying a { color: #94b2c7; background: url("../i/typ_flying.png") top center/contain no-repeat; }
+.type-list li.type-ghost a { color: #906791; background: url("../i/typ_ghost.png") top center/contain no-repeat; }
+.type-list li.type-grass a { color: #27cb50; background: url("../i/typ_grass.png") top center/contain no-repeat; }
+.type-list li.type-ground a { color: #a8702d; background: url("../i/typ_ground.png") top center/contain no-repeat; }
+.type-list li.type-ice a { color: #62adcf; background: url("../i/typ_ice.png") top center/contain no-repeat; }
+.type-list li.type-normal a { color: #ca99a6; background: url("../i/typ_normal.png") top center/contain no-repeat;}
+.type-list li.type-poison a { color: #9b69da; background: url("../i/typ_poison.png") top center/contain no-repeat; }
+.type-list li.type-psychic a { color: #f71e92; background: url("../i/typ_psychic.png") ctop center/contain no-repeat; }
+.type-list li.type-rock a { color: #8b3e22; background: url("../i/typ_rock.png") top center/contain no-repeat; }
+.type-list li.type-steel a { color: #60756e; background: url("../i/typ_steel.png") top center/contain no-repeat; }
+.type-list li.type-water a { color: #1552e1; background: url("../i/typ_water.png") top center/contain no-repeat; }
 
 #type-chart {
   width: 100%;
