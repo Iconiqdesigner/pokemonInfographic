@@ -577,26 +577,31 @@ var POKEMONAPP = {
       $li.append('<span class="type-name">' + POKEMONAPP.uppercase(type.type.name) + '</span>');
       $typeList.append($li);
     });
+  },
+
+  init: function() {
+    //ON INIT CALL ALL NECESSARY FUNCTIONS TO RUN THE APP
+    POKEMONAPP.pokePop;
+    POKEMONAPP.smoothScroll;
+    POKEMONAPP.markWaypoint;
+    POKEMONAPP.clickLocation;
+    POKEMONAPP.clearGenerationList;
+    POKEMONAPP.clearEvolution;
+    POKEMONAPP.clearTypeChart;
+    POKEMONAPP.closeRegionData;
+    POKEMONAPP.clickEvolutionChain;
+    POKEMONAPP.printGenerationGraph();
+    POKEMONAPP.getGenerationNum();
+    POKEMONAPP.selectSinglePokemon();
+    POKEMONAPP.typeClick();
+    POKEMONAPP.submitSearch();
   }
 
 
 }
 
-POKEMONAPP.pokePop;
-POKEMONAPP.smoothScroll;
-POKEMONAPP.markWaypoint;
-POKEMONAPP.clickLocation;
-POKEMONAPP.clearGenerationList;
-POKEMONAPP.clearEvolution;
-POKEMONAPP.clearTypeChart;
-POKEMONAPP.closeRegionData;
-POKEMONAPP.clickEvolutionChain;
-POKEMONAPP.printGenerationGraph();
-POKEMONAPP.getGenerationNum();
-POKEMONAPP.selectSinglePokemon();
-POKEMONAPP.typeClick();
-POKEMONAPP.submitSearch();
-
+//INITIALIZE THE APP
+POKEMONAPP.init();
 
 })($, window);
 
