@@ -161,13 +161,32 @@ img {
 .responsive-chart-container.type-chart-container::after {
   content: "";
   display: block;
-  padding-bottom: 100%;
+  padding-bottom: 75%;
 }
 .responsive-chart-container.gen-chart-container::after {
   content: "";
   display: block;
   padding-bottom: 2%;
 }
+
+#hide-type-chart {
+  color: #27a8c2;
+  font-weight: bold;
+  text-decoration: none;
+  padding: .2rem .5rem;
+  margin-left: -.2rem;
+  display: none;
+}
+
+#hide-type-chart:hover {
+  background: #27a8c2;
+  color: #fff;
+}
+
+.responsive-chart-container.type-chart-container #hide-type-chart {
+  display: inline-block;
+}
+
 .am-chart {
   position: absolute;
   width: 100%;
@@ -198,7 +217,7 @@ img {
 .type-list li.type-ice a { color: #62adcf; background: url("../i/typ_ice.png") top center/contain no-repeat; }
 .type-list li.type-normal a { color: #ca99a6; background: url("../i/typ_normal.png") top center/contain no-repeat;}
 .type-list li.type-poison a { color: #9b69da; background: url("../i/typ_poison.png") top center/contain no-repeat; }
-.type-list li.type-psychic a { color: #f71e92; background: url("../i/typ_psychic.png") ctop center/contain no-repeat; }
+.type-list li.type-psychic a { color: #f71e92; background: url("../i/typ_psychic.png") top center/contain no-repeat; }
 .type-list li.type-rock a { color: #8b3e22; background: url("../i/typ_rock.png") top center/contain no-repeat; }
 .type-list li.type-steel a { color: #60756e; background: url("../i/typ_steel.png") top center/contain no-repeat; }
 .type-list li.type-water a { color: #1552e1; background: url("../i/typ_water.png") top center/contain no-repeat; }

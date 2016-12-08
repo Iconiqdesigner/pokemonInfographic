@@ -7,8 +7,8 @@ var POKEMONAPP = {
   front_default: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
   pokemonGeneData: [{name: 'Gen I', count: 151, color: "#3498db" }, {name: 'Gen II', count: 100, color: "#16a085"}, {name: 'Gen III', count: 135, color: "#EE543A" }, {name: 'Gen IV', count: 107, color: "#00B5B5" }, {name: 'Gen V', count: 156, color: "#F07818"  }, {name: 'Gen VI', count: 72, color: "#AE44C8" }, ],
   pokemonStatData: [],
-  typeDamageReset: [ {"type": "Bug", "damage": 1, "tooltip": "Normal damage to Bug Pokémon."}, {"type": "Dark","damage": 1, "tooltip": "Normal damage to Dark Pokémon."}, { "type": "Dragon", "damage": 1, "tooltip": "Normal damage to Dragon Pokémon." }, { "type": "Electric", "damage": 1, "tooltip": "Normal damage to Electric Pokémon." }, { "type": "Fairy", "damage": 1, "tooltip": "Normal damage to Fairy Pokémon." }, { "type": "Fighting", "damage": 1, "tooltip": "Normal damage to Fighting Pokémon." }, { "type": "Fire", "damage": 1, "tooltip": "Normal damage to Fire Pokémon." }, { "type": "Flying", "damage": 1, "tooltip": "Normal damage to Flying Pokémon." }, { "type": "Ghost", "damage": 1, "tooltip": "Normal damage to Ghost Pokémon." }, { "type": "Grass", "damage": 1, "tooltip": "Normal damage to Grass Pokémon." }, { "type": "Ground", "damage": 1, "tooltip": "Normal damage to Ground Pokémon." }, { "type": "Ice", "damage": 1, "tooltip": "Normal damage to Ice Pokémon." }, { "type": "Normal", "damage": 1, "tooltip": "Normal damage to Normal Pokémon." }, { "type": "Poison", "damage": 1, "tooltip": "Normal damage to Poison Pokémon." }, { "type": "Psychic", "damage": 1, "tooltip": "Normal damage to Psychic Pokémon." }, { "type": "Rock", "damage": 1, "tooltip": "Normal damage to Rock Pokémon." }, { "type": "Steel", "damage": 1, "tooltip": "Normal damage to Steel Pokémon." }, { "type": "Water", "damage": 1, "tooltip": "Normal damage to Water Pokémon."} ],
-  typeDamage: [ {"type": "Bug", "damage": 1, "tooltip": "Normal damage to Bug Pokémon."}, {"type": "Dark","damage": 1, "tooltip": "Normal damage to Dark Pokémon."}, { "type": "Dragon", "damage": 1, "tooltip": "Normal damage to Dragon Pokémon." }, { "type": "Electric", "damage": 1, "tooltip": "Normal damage to Electric Pokémon." }, { "type": "Fairy", "damage": 1, "tooltip": "Normal damage to Fairy Pokémon." }, { "type": "Fighting", "damage": 1, "tooltip": "Normal damage to Fighting Pokémon." }, { "type": "Fire", "damage": 1, "tooltip": "Normal damage to Fire Pokémon." }, { "type": "Flying", "damage": 1, "tooltip": "Normal damage to Flying Pokémon." }, { "type": "Ghost", "damage": 1, "tooltip": "Normal damage to Ghost Pokémon." }, { "type": "Grass", "damage": 1, "tooltip": "Normal damage to Grass Pokémon." }, { "type": "Ground", "damage": 1, "tooltip": "Normal damage to Ground Pokémon." }, { "type": "Ice", "damage": 1, "tooltip": "Normal damage to Ice Pokémon." }, { "type": "Normal", "damage": 1, "tooltip": "Normal damage to Normal Pokémon." }, { "type": "Poison", "damage": 1, "tooltip": "Normal damage to Poison Pokémon." }, { "type": "Psychic", "damage": 1, "tooltip": "Normal damage to Psychic Pokémon." }, { "type": "Rock", "damage": 1, "tooltip": "Normal damage to Rock Pokémon." }, { "type": "Steel", "damage": 1, "tooltip": "Normal damage to Steel Pokémon." }, { "type": "Water", "damage": 1, "tooltip": "Normal damage to Water Pokémon."} ],
+  typeDamageReset: [ {"type": "Bug", "damage": 1, "tooltip": "Normal damage to Bug Pokémon.", "image": "i/typ_bug_sm.png"}, {"type": "Dark","damage": 1, "tooltip": "Normal damage to Dark Pokémon.", "image": "i/typ_dark_sm.png"}, { "type": "Dragon", "damage": 1, "tooltip": "Normal damage to Dragon Pokémon.", "image": "i/typ_dragon_sm.png" }, { "type": "Electric", "damage": 1, "tooltip": "Normal damage to Electric Pokémon.", "image": "i/typ_electric_sm.png"  }, { "type": "Fairy", "damage": 1, "tooltip": "Normal damage to Fairy Pokémon.", "image": "i/typ_fairy_sm.png"  }, { "type": "Fighting", "damage": 1, "tooltip": "Normal damage to Fighting Pokémon.", "image": "i/typ_fighting_sm.png"  }, { "type": "Fire", "damage": 1, "tooltip": "Normal damage to Fire Pokémon.", "image": "i/typ_fire_sm.png" }, { "type": "Flying", "damage": 1, "tooltip": "Normal damage to Flying Pokémon.", "image": "i/typ_flying_sm.png" }, { "type": "Ghost", "damage": 1, "tooltip": "Normal damage to Ghost Pokémon.", "image": "i/typ_ghost_sm.png" }, { "type": "Grass", "damage": 1, "tooltip": "Normal damage to Grass Pokémon.", "image": "i/typ_grass_sm.png" }, { "type": "Ground", "damage": 1, "tooltip": "Normal damage to Ground Pokémon.", "image": "i/typ_ground_sm.png" }, { "type": "Ice", "damage": 1, "tooltip": "Normal damage to Ice Pokémon.", "image": "i/typ_ice_sm.png" }, { "type": "Normal", "damage": 1, "tooltip": "Normal damage to Normal Pokémon.", "image": "i/typ_normal_sm.png" }, { "type": "Poison", "damage": 1, "tooltip": "Normal damage to Poison Pokémon.", "image": "i/typ_poison_sm.png" }, { "type": "Psychic", "damage": 1, "tooltip": "Normal damage to Psychic Pokémon.", "image": "i/typ_psychic_sm.png" }, { "type": "Rock", "damage": 1, "tooltip": "Normal damage to Rock Pokémon.", "image": "i/typ_rock_sm.png" }, { "type": "Steel", "damage": 1, "tooltip": "Normal damage to Steel Pokémon.", "image": "i/typ_steel_sm.png" }, { "type": "Water", "damage": 1, "tooltip": "Normal damage to Water Pokémon.", "image": "i/typ_water_sm.png" } ],
+  typeDamage: [ {"type": "Bug", "damage": 1, "tooltip": "Normal damage to Bug Pokémon.", "image": "i/typ_bug_sm.png"}, {"type": "Dark","damage": 1, "tooltip": "Normal damage to Dark Pokémon.", "image": "i/typ_dark_sm.png"}, { "type": "Dragon", "damage": 1, "tooltip": "Normal damage to Dragon Pokémon.", "image": "i/typ_dragon_sm.png" }, { "type": "Electric", "damage": 1, "tooltip": "Normal damage to Electric Pokémon.", "image": "i/typ_electric_sm.png"  }, { "type": "Fairy", "damage": 1, "tooltip": "Normal damage to Fairy Pokémon.", "image": "i/typ_fairy_sm.png"  }, { "type": "Fighting", "damage": 1, "tooltip": "Normal damage to Fighting Pokémon.", "image": "i/typ_fighting_sm.png"  }, { "type": "Fire", "damage": 1, "tooltip": "Normal damage to Fire Pokémon.", "image": "i/typ_fire_sm.png" }, { "type": "Flying", "damage": 1, "tooltip": "Normal damage to Flying Pokémon.", "image": "i/typ_flying_sm.png" }, { "type": "Ghost", "damage": 1, "tooltip": "Normal damage to Ghost Pokémon.", "image": "i/typ_ghost_sm.png" }, { "type": "Grass", "damage": 1, "tooltip": "Normal damage to Grass Pokémon.", "image": "i/typ_grass_sm.png" }, { "type": "Ground", "damage": 1, "tooltip": "Normal damage to Ground Pokémon.", "image": "i/typ_ground_sm.png" }, { "type": "Ice", "damage": 1, "tooltip": "Normal damage to Ice Pokémon.", "image": "i/typ_ice_sm.png" }, { "type": "Normal", "damage": 1, "tooltip": "Normal damage to Normal Pokémon.", "image": "i/typ_normal_sm.png" }, { "type": "Poison", "damage": 1, "tooltip": "Normal damage to Poison Pokémon.", "image": "i/typ_poison_sm.png" }, { "type": "Psychic", "damage": 1, "tooltip": "Normal damage to Psychic Pokémon.", "image": "i/typ_psychic_sm.png" }, { "type": "Rock", "damage": 1, "tooltip": "Normal damage to Rock Pokémon.", "image": "i/typ_rock_sm.png" }, { "type": "Steel", "damage": 1, "tooltip": "Normal damage to Steel Pokémon.", "image": "i/typ_steel_sm.png" }, { "type": "Water", "damage": 1, "tooltip": "Normal damage to Water Pokémon.", "image": "i/typ_water_sm.png" } ],
   typeGraphColor: "#333333",
   singlePokemonStats: [],
   //MANIPULATION FUNCTIONS
@@ -54,6 +54,14 @@ var POKEMONAPP = {
     $showPokemon.removeClass("show-pokemon");
   }),
 
+  clearTypeChart: $("#hide-type-chart").click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(".responsive-chart-container.type-chart-container").removeClass("type-chart-container");
+    $("#type-chart").html('');
+    $(".type-list li").removeClass("inactive");
+  }),
+
   checkVisible: function ( elm, eval ) {
       eval = eval || "visible";
       var vpH = $(window).height(), // Viewport Height
@@ -97,8 +105,9 @@ var POKEMONAPP = {
     var chart = AmCharts.makeChart( "type-chart", {
       "type": "radar",
       "dataProvider": POKEMONAPP.typeDamage,
+      "addClassNames": true,
       "valueAxes": [ {
-        "axisTitleOffset": 20,
+        "axisTitleOffset": 35,
         "minimum": 0,
         "axisAlpha": 0.15
       } ],
@@ -111,8 +120,46 @@ var POKEMONAPP = {
         "fillAlphas": 0.6,
         "valueField": "damage"
       } ],
-      "categoryField": "type"
+      "categoryField": "type",
+      "listeners": [ {
+        "event": "rendered",
+        "method": updateLabels
+      }, {
+        "event": "resized",
+        "method": updateLabels
+      } ]
     });
+
+    function updateLabels( event ) {
+      var labels = event.chart.chartDiv.getElementsByClassName( "amcharts-axis-title" );
+      for ( var i = labels.length - 1; i >= 0; i-- ) {
+        var src = event.chart.dataProvider[ i ].image;
+        if ( src === undefined )
+          continue;
+        var label = labels[ i ];
+        var parent = label.parentNode;
+        var group = document.createElementNS( "http://www.w3.org/2000/svg", "g" );
+        var img = document.createElementNS( "http://www.w3.org/2000/svg", "image" );
+
+        // Setup image
+        img.setAttributeNS( "http://www.w3.org/1999/xlink", "href", src );
+        img.setAttribute( "x", "-17" );
+        img.setAttribute( "y", "-17" );
+        img.setAttribute( "width", "40" );
+        img.setAttribute( "height", "40" );
+
+        // Swap position to group; remove from label
+        group.setAttribute( "transform", label.getAttribute( "transform" ) );
+        parent.removeChild( label );
+
+        // Group axis labels
+        //group.appendChild(label);
+        group.appendChild( img );
+        parent.appendChild( group );
+      }
+
+    }
+
     //RESET THE TYPE DAMAGE VARIABLE AFTER PRINTING THE GRAPH
     //NEED TO STRINGIFY THEN PARSE THE DAMAGE RESET OTHERWISE IT WILL BE A
     //COPY BY REFERENCE AND THE GRAPH WILL GET MESSED UP.
@@ -142,11 +189,6 @@ var POKEMONAPP = {
       } ],
       "categoryField": "name"
     });
-    //RESET THE TYPE DAMAGE VARIABLE AFTER PRINTING THE GRAPH
-    //NEED TO STRINGIFY THEN PARSE THE DAMAGE RESET OTHERWISE IT WILL BE A
-    //COPY BY REFERENCE AND THE GRAPH WILL GET MESSED UP.
-    POKEMONAPP.typeDamage = (JSON.parse(JSON.stringify(POKEMONAPP.typeDamageReset)));
-
   },
 
   //CLICK FUNCTION TO GET ALL THE POKEMON IN A GENERATION
@@ -512,6 +554,7 @@ POKEMONAPP.pokePop;
 POKEMONAPP.smoothScroll;
 POKEMONAPP.markWaypoint;
 POKEMONAPP.clickLocation;
+POKEMONAPP.clearTypeChart;
 POKEMONAPP.closeRegionData;
 POKEMONAPP.clickEvolutionChain;
 POKEMONAPP.printGenerationGraph();
