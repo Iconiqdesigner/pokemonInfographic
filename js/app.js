@@ -168,6 +168,7 @@ var POKEMONAPP = {
   },
 
   printStatsGraph: function(color) {
+    $("#stat-chart").addClass("loaded");
     var chart = AmCharts.makeChart( "stat-chart", {
       "type": "serial",
       // "rotate": true,
@@ -461,12 +462,15 @@ var POKEMONAPP = {
     POKEMONAPP.evolutionCall(pokemon);
 
     var pokeObj = response;
+    var types = response.types;
     var stats = response.stats;
     var abilities = response.abilities;
     var pokeName = POKEMONAPP.uppercase(pokeObj.name)
+    console.log(pokeObj);
 
     $("#single-pokemon").removeClass("loading");
     $pokeSprite = $('<img class="sprite-image" src="' + pokeObj.sprites.front_default + '" alt="' + pokeObj.name + '" />')
+    $typeList = $('<ul id="pokemon-type-list"></ul>');
     $abilitiesList = $('<ul id="ability-list"></ul>');
 
     $("#single-pokemon-name").append($pokeSprite);
@@ -474,6 +478,11 @@ var POKEMONAPP = {
 
     POKEMONAPP.getPokemonStats(stats);
     POKEMONAPP.printStatsGraph();
+    $("#stat-chart").prepend("<h3>Base Stats</h3>");
+
+    POKEMONAPP.getPokemonTypes(types);
+    $("#stat-container").append("<h3>" + pokeName + "'s types are:</h3>");
+    $("#stat-container").append($typeList);
 
     POKEMONAPP.getPokemonAbilities(abilities);
     $("#stat-container").append("<h3>" + pokeName + "'s abilities are:</h3>");
@@ -546,6 +555,14 @@ var POKEMONAPP = {
       $abilitiesList.append($li);
     });
   },
+
+  getPokemonTypes: function(types) {
+    types.forEach( function(type) {
+      $li = $('<li class="pokemon-type ' + type.type.name + '"></li>');
+      $li.append('<span class="type-name">' + POKEMONAPP.uppercase(type.type.name) + '</span>');
+      $typeList.append($li);
+    });
+  }
 
 
 }
