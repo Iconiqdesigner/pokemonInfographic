@@ -300,8 +300,8 @@ img {
   position: relative;
   left: 0;
   top: 0;
-  background: #f0f6f7;
-  border: .1rem solid #27a8c2;
+  background: #f5f4e9;
+  border: .1rem solid #f5c40c;
   transition: all .5s ease-out;
 }
 
