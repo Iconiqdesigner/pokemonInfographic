@@ -253,6 +253,7 @@ img {
   top: 6.5rem;
   padding: 0;
   margin: 0;
+  z-index: 100;
 }
 
 #waypoint-nav li {
@@ -273,9 +274,49 @@ img {
 }
 
 #waypoint-nav li a.on-screen {
-  color: #004a94;
-  border-color: #004a94;
+  color: #004993;
+  border-color: #004993;
+}
+/*
+@media screen and (max-width: 1200px) {
+  #waypoint-nav li a {
+    font-size: 1rem;
+  }
+}*/
 
+@media screen and (max-width: 1000px) {
+  #waypoint-nav {
+    top: 0;
+    right: 0;
+    width: calc(75% - 3rem);
+    margin: auto;
+    text-align: center;
+    background: rgba(247,243,195,0.9);
+    padding: 0;
+    height: 2.4rem;
+  }
+
+  #waypoint-nav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    height: 0;
+  }
+
+  #waypoint-nav li a {
+    display: inline-block;
+    color: #004993;
+    margin: 0 -.1rem;
+    font-size: 1.2rem;
+    line-height: 2.4rem;
+    padding: 0 1rem;
+  }
+
+  #waypoint-nav li a.on-screen {
+    color: #ffffff;
+    border: 0;
+    background: rgba(0,73,147,0.7);
+  }
 }
 
 
