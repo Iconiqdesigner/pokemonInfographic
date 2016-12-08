@@ -133,11 +133,10 @@ var POKEMONAPP = {
       } ],
       "graphs": [ {
         "balloonText": "[[name]] base value is [[value]]",
-        "bullet": "round",
         "lineThickness": 2,
-        "lineColor": "#1297b1",
-        "fillColor": "#1297b1",
-        "fillAlphas": 0.6,
+        "lineColor": "#004a94",
+        "fillColor": "#004a94",
+        "fillAlphas": 0.8,
         "type": "column",
         "valueField": "value"
       } ],
@@ -435,7 +434,7 @@ var POKEMONAPP = {
     POKEMONAPP.printStatsGraph();
 
     POKEMONAPP.getPokemonAbilities(abilities);
-    $("#stat-container").append("<h3>" + pokeName + "'s abilities are.</h3>");
+    $("#stat-container").append("<h3>" + pokeName + "'s abilities are:</h3>");
     $("#stat-container").append($abilitiesList);
 
   },
@@ -464,17 +463,19 @@ var POKEMONAPP = {
     is_baby = chain.is_baby;
     evolves_to = chain.evolves_to;
     if(is_baby === true) {
-      $("#evolution-chain").append('<li class="baby-form" data-name="' + chain.species.name + '">' + POKEMONAPP.uppercase(chain.species.name) + '</li>');
+      $("#evolution-chain").append('<li class="baby-form" data-name="' + chain.species.name + '"><span>' + POKEMONAPP.uppercase(chain.species.name) + '</span></li>');
     } else {
-      $("#evolution-chain").append('<li data-name="' + chain.species.name + '">' + POKEMONAPP.uppercase(chain.species.name) + '</li>');
+      $("#evolution-chain").append('<li data-name="' + chain.species.name + '"><span>' + POKEMONAPP.uppercase(chain.species.name) + '</span></li>');
     }
     evolves_to.forEach(POKEMONAPP.printEvolutionChain);
   },
 
   printEvolutionChain: function(evolution) {
     $li = $("<li></li>");
+    $span = $("<span></span>");
     $li.attr("data-name", evolution.species.name);
-    $li.text(POKEMONAPP.uppercase(evolution.species.name));
+    $span.text(POKEMONAPP.uppercase(evolution.species.name));
+    $li.append($span);
     $("#evolution-chain").append($li);
     if(evolution.evolves_to.length > 0) {
       evolution.evolves_to.forEach(POKEMONAPP.printEvolutionChain)

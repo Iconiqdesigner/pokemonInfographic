@@ -217,6 +217,14 @@ img {
   width: 50%;
 }
 
+.one-third {
+  width: 33%;
+}
+
+.two-third {
+  width: 67%;
+}
+
 .left { float: left; }
 .right { float: right; }
 
@@ -442,9 +450,9 @@ li#kalos { left: 27%; top: 15%; }
   line-height: 2.4rem;
   background: #27a8c2;
   cursor: pointer;
-  margin-right: 0;
+  margin-right: -1.2rem;
   position: relative;
-  z-index: 2
+  z-index: 1;
 }
 
 #evolution-chain li:hover {
@@ -461,7 +469,7 @@ li#kalos { left: 27%; top: 15%; }
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 0;
 }
 
 #evolution-chain li:hover::after {
@@ -483,6 +491,38 @@ li#kalos { left: 27%; top: 15%; }
 
 #evolution-chain li:first-child::before {
   content: none;
+}
+
+#evolution-chain li.baby-form::before {
+  content: '';
+  display: block;
+  width: 5rem;
+  height: 5rem;
+  border: 0;
+  background: transparent url("../i/ic_pacifier.svg") center/cover no-repeat;
+  top: -0.8rem;
+  left: -1rem;
+}
+
+#evolution-chain li:last-child {
+  margin-right: 0;
+}
+
+#evolution-chain li:last-child::after {
+  content: '';
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border: 0;
+  background: transparent url("../i/ic_finalForm.svg") center/cover no-repeat;
+  top: -0.8rem;
+  right: -1rem;
+}
+
+#evolution-chain li span {
+  position: relative;
+  z-index: 5;
+  left: -.4rem;
 }
 
 /* SINGLE LINE FORM */
